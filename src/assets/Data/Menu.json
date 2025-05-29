@@ -1,0 +1,298 @@
+{
+    "food": {
+        "salads": [
+            {
+                "id": 1,
+                "name": "Chicken Caesar Salad",
+                "description": "Chicken, croutons, parmesan cheese, romaine lettuce, and homemade dressing",
+                "price": 14
+            },
+            {
+                "id": 2,
+                "name": "Spinach Salad with Smoked Cod",
+                "description": "Fresh spinach, smoked cod, palm hearts, and orange dressing",
+                "price": 15
+            }
+        ],
+        "burgers": [
+            {
+                "id": 3,
+                "name": "Classic Burger",
+                "description": "Natural fermentation bun, 150g beef patty, cheddar, special sauce, lettuce, tomatoes, and onions",
+                "price": 12
+            },
+            {
+                "id": 4,
+                "name": "Bacon and Egg Burger",
+                "description": "Natural fermentation bun, 150g beef patty, bacon, fried egg, and homemade sauce",
+                "price": 12
+            },
+            {
+                "id": 5,
+                "name": "Goat Cheese Burger",
+                "description": "Natural fermentation bun, 150g beef patty, goat cheese, onion chutney, and arugula",
+                "price": 12
+            },
+            {
+                "id": 6,
+                "name": "Big G Burger",
+                "description": "Natural fermentation bun, 150g beef patty, cheddar, special sauce, pickles, and bacon",
+                "price": 12
+            },
+            {
+                "id": 7,
+                "name": "Gorgonzola Burger",
+                "description": "Natural fermentation bun, 150g beef patty, roasted tomatoes, creamy gorgonzola sauce, and arugula",
+                "price": 11
+            }
+        ],
+        "sandwiches": [
+            {
+                "id": 8,
+                "name": "Pastrami Sandwich",
+                "description": "Natural fermentation bread, pastrami, bacon, cheddar, pickles, and homemade mustard",
+                "price": 11
+            }
+        ],
+        "toasts": [
+            {
+                "id": 9,
+                "name": "Avocado and Egg Toast",
+                "description": "Natural fermentation bread, tomato, avocado, egg, and coriander",
+                "price": 9
+            },
+            {
+                "id": 10,
+                "name": "Kimchi and Cheese Toast",
+                "description": "Natural fermentation bread, cheese and kimchi",
+                "price": 6
+            },
+            {
+                "id": 11,
+                "name": "Tuna, Mozzarella and Cheddar Toast",
+                "description": "Natural fermentation bread, tuna, homemade mayo, mustard, olive oil, onion, parsley, mozzarella and cheddar cheese",
+                "price": 7
+            },
+            {
+                "id": 12,
+                "name": "Cheese and Cured Ham Toast",
+                "description": "Natural fermentation bread, cheese and cured ham",
+                "price": 6
+            }
+        ],
+        "desserts": [
+            {
+                "id": 13,
+                "name": "Carrot Cake",
+                "price": 4
+            },
+            {
+                "id": 14,
+                "name": "Pistachio Cake",
+                "price": 4
+            },
+            {
+                "id": 15,
+                "name": "Banana Bread",
+                "price": 4
+            },
+            {
+                "id": 16,
+                "name": "Chocolate and Pistachio Cookie",
+                "price": 2.5
+            },
+            {
+                "id": 17,
+                "name": "Weekly Cake Selection (Ask our staff)",
+                "price": 4
+            },
+            {
+                "id": 18,
+                "name": "Overnight Oats (Seasonal fruit, hazelnut butter, blackberry jam and coconut flakes)",
+                "price": 8
+            }
+        ]
+    },
+    "drinks": {
+        "juices": [
+            {
+                "id": 19,
+                "name": "Orange Juice",
+                "price": 4
+            },
+            {
+                "id": 20,
+                "name": "Juice of the Day",
+                "price": 4.5
+            },
+            {
+                "id": 21,
+                "name": "Carrot, Orange and Ginger Juice",
+                "price": 4.5
+            }
+        ],
+        "otherDrinks": [
+            {
+                "id": 22,
+                "name": "Kombucha",
+                "description": "Original flavor | 1 month fermentation",
+                "price": 4.5
+            },
+            {
+                "id": 23,
+                "name": "Why Not Soda",
+                "description": "Artisanal craft soda with unique flavors",
+                "price": 3.5
+            },
+            {
+                "id": 24,
+                "name": "Water",
+                "variants": [
+                    {
+                        "name": "Still Water",
+                        "price": 1.0
+                    },
+                    {
+                        "name": "Sparkling Water",
+                        "price": 2.0
+                    }
+                ]
+            }
+        ],
+        "beers": [
+            {
+                "id": 25,
+                "name": "Blondie",
+                "variants": [
+                    {
+                        "name": "Blonde Ale 25cl",
+                        "price": 2.56
+                    },
+                    {
+                        "name": "Blonde Art 50cl",
+                        "price": 5.0
+                    }
+                ]
+            },
+            {
+                "id": 26,
+                "name": "Born In the IPA",
+                "variants": [
+                    {
+                        "name": "IPA 25cl",
+                        "price": 3.0
+                    },
+                    {
+                        "name": "IPA Art 50cl",
+                        "price": 6.0
+                    }
+                ]
+            },
+            {
+                "id": 27,
+                "name": "Rebendita",
+                "description": "Milkshake passion fruit IPA 6% 33cl bottle",
+                "price": 6.0
+            },
+            {
+                "id": 28,
+                "name": "Twist and Stout",
+                "description": "Oatmeal Stout 5.5% 33cl bottle",
+                "price": 6.0
+            },
+            {
+                "id": 29,
+                "name": "Gin Tonic",
+                "price": 8.0
+            }
+        ],
+        "coffee": [
+            {
+                "id": 30,
+                "name": "Espresso",
+                "variants": [
+                    {
+                        "name": "Single",
+                        "price": 1.50
+                    },
+                    {
+                        "name": "Double",
+                        "price": 2.50
+                    }
+                ]
+            },
+            {
+                "id": 31,
+                "name": "Latte",
+                "price": 3.50
+            },
+            {
+                "id": 32,
+                "name": "Cappuccino",
+                "price": 3.0
+            },
+            {
+                "id": 33,
+                "name": "Affogato",
+                "price": 5.0
+            },
+            {
+                "id": 34,
+                "name": "Irish Coffee",
+                "price": 5.0
+            },
+            {
+                "id": 35,
+                "name": "Flatwhite",
+                "price": 3.0
+            },
+            {
+                "id": 36,
+                "name": "Filter Coffee",
+                "price": 2.5
+            },
+            {
+                "id": 37,
+                "name": "V60 Filter",
+                "price": 4.0
+            },
+            {
+                "id": 38,
+                "name": "Cold Brew",
+                "price": 2.5
+            },
+            {
+                "id": 39,
+                "name": "Hot Chocolate",
+                "price": 2.5
+            }
+        ],
+        "teas": [
+            {
+                "id": 40,
+                "name": "Earl Grey",
+                "price": 2.5
+            },
+            {
+                "id": 41,
+                "name": "Chamomile",
+                "price": 2.5
+            },
+            {
+                "id": 42,
+                "name": "English Breakfast",
+                "price": 2.5
+            },
+            {
+                "id": 43,
+                "name": "Green Tea",
+                "price": 2.5
+            },
+            {
+                "id": 44,
+                "name": "Hibiscus & Raspberry",
+                "price": 2.5
+            }
+        ]
+    }
+}
