@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import menuData from '../../assets/data/menu.json';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
     const [activeTab, setActiveTab] = useState('coffee');
@@ -95,6 +96,7 @@ const Menu = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
         </div>
     );
 };
