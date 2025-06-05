@@ -126,12 +126,15 @@ const Home = () => {
                             className="flex"
                             animate={{
                                 x: ['0%', '-100%'],
+
                             }}
                             transition={{
-                                duration: 40,
+                                duration: 10,
                                 ease: "linear",
+                                repeatType: "loop",
                                 repeat: Infinity,
                             }}
+
                         >
                             {/* image 1 */}
                             <div className="flex-shrink-0 w-full md:w-1/3 px-4">
@@ -167,7 +170,7 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            {/* Duplicate videos for seamless looping */}
+
                             {/* image 4 */}
                             <div className="flex-shrink-0 w-full md:w-1/3 px-4">
                                 <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">

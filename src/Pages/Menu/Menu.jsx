@@ -36,16 +36,18 @@ const Menu = () => {
             <div className="sticky top-0 z-10 bg-white shadow-sm">
                 <div className="flex overflow-x-auto px-6">
                     {Object.keys({ ...menuData.drinks, ...menuData.food }).map((tab) => (
-                        <button
+                        <motion.button
+
+                            whileTap={{ scale: 0.80 }}
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`px-6 py-4 font-medium whitespace-nowrap ${activeTab === tab
+                            className={`px-6 py-4 font-medium text-xl whitespace-nowrap   ${activeTab === tab
                                 ? 'text-[#2a2a2a] border-b-2 border-[#8b9e7e]'
                                 : 'text-gray-500'
                                 }`}
                         >
                             {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                        </button>
+                        </motion.button>
                     ))}
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [activeTab, setActiveTab] = useState('/');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navLinks = [
@@ -32,22 +33,29 @@ const Navbar = () => {
                         whileHover={{ scale: 1.05 }}
                         className="flex-shrink-0 flex items-center"
                     >
-                        <Link to="/" className="text-3xl font-bold text-green-700">
+                        <Link to="/" className=" flex items-center text-3xl font-bold text-green-700">
+                            <img className=' w-16 bg-white' src="https://i.postimg.cc/NMn8vZXC/temp-Image-UHr5w-A.avif" alt="" />
                             ARBOR
                         </Link>
                     </motion.div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-8">
-                        {navLinks.map((link) => (
+                        {navLinks.map((link, tab) => (
                             <motion.div
+
                                 key={link.name}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Link
+                                    onClick={() => setActiveTab(tab)}
+                                    className={` text-green-800 hover:text-green-600 px-3 py-2 rounded-md text-xl font-medium transition-colors duration-300 ${activeTab === tab
+                                        ? 'border-b-2 border-[#8b9e7e]'
+                                        : 'border-b-0'
+                                        }`}
                                     to={link.path}
-                                    className="text-green-800 hover:text-green-600 px-3 py-2 rounded-md text-lg font-medium transition-colors duration-300"
+
                                 >
                                     {link.name}
                                 </Link>
