@@ -18,7 +18,8 @@ const Contact = () => {
             {/* Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <motion.div
-                    className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center"
+                    className="absolute inset-0 bg-[url('https://i.postimg.cc/htvM97VP/IMG-8042.avif')] bg-cover bg-center"
+                    // className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center"
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5 }}
@@ -144,8 +145,8 @@ const Contact = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="font-medium">123 Greenway Boulevard</p>
-                                            <p className="text-gray-600">Lisbon, Portugal</p>
+                                            <p className="font-medium">Av. do Infante 14, São Martinho, 9000-015</p>
+                                            <p className="text-gray-600">Funchal, Portugal</p>
                                         </div>
                                     </motion.div>
 
@@ -178,8 +179,8 @@ const Contact = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="font-medium">+351 123 456 789</p>
-                                            <p className="text-gray-600">Monday - Friday, 9am-5pm</p>
+                                            <p className="font-medium">+351 291 659 432</p>
+                                            <p className="text-gray-600">Monday - Sunday, 10am-6pm</p>
                                         </div>
                                     </motion.div>
                                 </div>
@@ -195,9 +196,7 @@ const Contact = () => {
                                     transition={{ delay: 0.5 }}
                                 >
                                     {[
-                                        { day: 'Monday - Friday', hours: '7:00 AM - 8:00 PM' },
-                                        { day: 'Saturday', hours: '8:00 AM - 8:00 PM' },
-                                        { day: 'Sunday', hours: '8:00 AM - 6:00 PM' }
+                                        { day: 'Monday - Sunday', hours: '10:00 AM - 6:00 PM' }
                                     ].map((item, i) => (
                                         <div key={i} className="flex justify-between border-b border-[#8b9e7e]/10 pb-3">
                                             <span className="text-gray-700">{item.day}</span>
@@ -209,23 +208,25 @@ const Contact = () => {
 
                             {/* Social Media */}
                             <div>
-                                <h3 className="text-2xl font-serif mb-6 text-[#2a2a2a]">Follow Along</h3>
+                                <h3 className="text-3xl font-serif mb-6 text-[#2a2a2a]">Follow Along</h3>
                                 <motion.div
                                     className="flex space-x-6"
                                     initial={{ opacity: 0 }}
                                     whileInView={{ opacity: 1 }}
                                     transition={{ delay: 0.6 }}
                                 >
-                                    {['Instagram', 'Twitter', 'Facebook'].map((social, i) => (
-                                        <motion.a
-                                            key={i}
-                                            href="#"
-                                            className="text-[#8b9e7e] hover:text-[#2a2a2a] transition-colors"
-                                            whileHover={{ y: -3 }}
-                                        >
-                                            {social}
-                                        </motion.a>
-                                    ))}
+                                    {[
+                                        { name: 'Instagram', social: 'https://www.instagram.com/arbor_food_coffee/' },
+                                        { name: 'Facebook', social: 'https://www.facebook.com/profile.php?id=61551873605834' }].map((social, i) => (
+                                            <motion.a
+                                                key={i}
+                                                href={social.social}
+                                                className="text-[#8b9e7e] hover:text-[#2a2a2a] transition-colors text-2xl font-bold"
+                                                whileHover={{ y: -3 }}
+                                            >
+                                                {social.name}
+                                            </motion.a>
+                                        ))}
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -244,7 +245,7 @@ const Contact = () => {
                     <div className="rounded-2xl overflow-hidden shadow-xl h-96 bg-gray-100 relative">
                         {/* Replace with your actual map component */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <p className="text-gray-500">Interactive map would appear here</p>
+                            <img src={'https://i.postimg.cc/RFcjdqbW/image.png'} alt="" />
                         </div>
                     </div>
                 </motion.div>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
-
+import barista from '../../assets/Image/Barista.png'
 const About = () => {
     const ref = useRef();
     const { scrollYProgress } = useScroll({
@@ -15,19 +15,19 @@ const About = () => {
             name: "Alex Rivera",
             role: "Head Barista",
             bio: "National coffee champion with 10+ years crafting perfect brews",
-            img: "barista.jpg"
+            img: 'https://i.postimg.cc/v83Vh3r7/temp-Image-Qoo-ZWt.avif'
         },
         {
             name: "Sophie Chen",
             role: "Executive Chef",
             bio: "Farm-to-table specialist blending local ingredients with global techniques",
-            img: "chef.jpg"
+            img: "https://i.postimg.cc/zBdGC2sV/temp-Imageg-Bu6-H0.avif"
         },
         {
             name: "Jamal Wilson",
             role: "Pastry Chef",
             bio: "Creates our signature desserts with scientific precision",
-            img: "pastry-chef.jpg"
+            img: "https://i.postimg.cc/zB2Stg3p/temp-Imageex461d.avif"
         }
     ];
 
@@ -54,7 +54,7 @@ const About = () => {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <motion.div
-                    className="absolute inset-0 bg-[url('https://i.postimg.cc/8kdW7H5J/temp-Image-Mrj16b.avif')] bg-cover bg-center"
+                    className="absolute inset-0 bg-[url('https://i.postimg.cc/HxG4ZR0v/temp-Imagevyo-EVi.avif')] bg-cover bg-center"
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5 }}
@@ -163,11 +163,12 @@ const About = () => {
                                 viewport={{ once: true }}
                                 className="group"
                             >
-                                <div className="relative overflow-hidden rounded-xl mb-6 h-80 bg-gray-100">
+                                <div className="relative overflow-hidden rounded-xl mb-6  bg-gray-100">
                                     <motion.img
                                         src={member.img}
                                         alt={member.name}
                                         className="w-full h-full object-cover"
+
                                         whileHover={{ scale: 1.05 }}
                                         transition={{ duration: 0.5 }}
                                     />
@@ -231,7 +232,7 @@ const About = () => {
 
                         <motion.div
                             initial={{ x: -50 }}
-                            whileInView={{ x: 0 }}
+                            whileInView={{ x: 0, transition: { duration: 0.5 } }}
                             className="mb-8 pl-6 border-l-4 border-[#8b9e7e]"
                         >
                             <h3 className="text-2xl font-serif mb-4">Expanding Our Roots</h3>
@@ -242,7 +243,7 @@ const About = () => {
 
                         <motion.div
                             initial={{ x: 50 }}
-                            whileInView={{ x: 0 }}
+                            whileInView={{ x: 0, transition: { duration: 0.7 } }}
                             className="mb-8 pr-6 border-r-4 border-[#8b9e7e] text-right"
                         >
                             <h3 className="text-2xl font-serif mb-4">Community Initiatives</h3>

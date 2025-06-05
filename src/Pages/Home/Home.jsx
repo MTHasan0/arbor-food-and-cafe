@@ -2,10 +2,20 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
+import image1 from '../../assets/Image/1.jpg'
+import image2 from '../../assets/Image/2.jpg'
+import image3 from '../../assets/Image/3.jpg'
+import image4 from '../../assets/Image/4.jpg'
+import image5 from '../../assets/Image/5.jpg'
+import image6 from '../../assets/Image/6.jpg'
+import { TypeAnimation } from 'react-type-animation';
 
 
 
 const Home = () => {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     const containerRef = useRef();
     const { scrollYProgress } = useScroll({ target: containerRef });
     const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -13,10 +23,10 @@ const Home = () => {
 
     // Featured menu items
     const featuredItems = [
-        { name: "Espresso Con Panna", price: "€3.80", desc: "Rich espresso topped with whipped cream" },
-        { name: "Avocado Toast", price: "€8.50", desc: "Sourdough, smashed avocado, cherry tomatoes" },
-        { name: "Matcha Latte", price: "€4.90", desc: "Ceremonial-grade matcha with oat milk" },
-        { name: "Chocolate Croissant", price: "€4.20", desc: "Flaky pastry with dark chocolate filling" }
+        { name: "Latte", price: "€3.50", desc: "Hot and Iced, Rich flavour" },
+        { name: "Avocado and Egg Toast", price: "€9.00", desc: "Natural fermentation bread, tomato, avocado, egg, and coriander" },
+        { name: "Kimchi and Cheese Toast", price: "€6.00", desc: "Natural fermentation bread, cheese and kimchi" },
+        { name: "Pastrami Sandwich", price: "€11.00", desc: "Natural fermentation bread, pastrami, bacon, cheddar, pickles, and homemade mustard" }
     ];
 
     const features = [
@@ -46,7 +56,8 @@ const Home = () => {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
                         y,
-                        backgroundImage: `url(${'https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80'})`
+                        // backgroundImage: `url(${'https://i.postimg.cc/yxmK7bLx/IMG-8039.avif'})`
+                        backgroundImage: `url(${'https://i.postimg.cc/htvM97VP/IMG-8042.avif'})`
                     }}
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -63,7 +74,7 @@ const Home = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        ARBOR FOOD AND COFFEE
+                        <TypeAnimation sequence={['ARBOR FOOD AND COFFEE']} wrapper='span' speed={20} style={{ fontSize: '1em', display: 'inline-block' }} />
                     </motion.h1>
 
                     <motion.p
@@ -81,12 +92,122 @@ const Home = () => {
                         transition={{ delay: 0.6, duration: 0.5 }}
                     >
                         <Link
+                            onClick={scrollToTop}
                             to="/menu"
-                            className="inline-block px-8 py-3 bg-white text-[#2a2a2a] hover:bg-transparent hover:text-white border border-white transition-all duration-500 text-lg"
+                            className="inline-block px-8 py-3 bg-white  hover:bg-[#8b9e7e] hover:text-white border border-white transition-all duration-500 text-lg"
                         >
                             Explore Menu
                         </Link>
                     </motion.div>
+                </div>
+            </section>
+
+
+            {/* Video Showcase Section */}
+            <section className="py-24 bg-[#f1eeea]">
+                <div className="container mx-auto px-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-serif font-light mb-6">Behind the Scenes</h2>
+                        <div className="w-16 h-0.5 bg-[#8b9e7e] mx-auto mb-8" />
+                        <p className="max-w-2xl mx-auto text-lg leading-relaxed">
+                            A glimpse into our daily craft and passion
+                        </p>
+                    </motion.div>
+
+                    <div className="relative w-full overflow-hidden">
+                        {/* Video Carousel */}
+                        <motion.div
+                            className="flex"
+                            animate={{
+                                x: ['0%', '-100%'],
+                            }}
+                            transition={{
+                                duration: 40,
+                                ease: "linear",
+                                repeat: Infinity,
+                            }}
+                        >
+                            {/* image 1 */}
+                            <div className="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">
+                                    <img className="absolute inset-0 w-full h-full object-cover"
+                                        src={image1} alt="" />
+                                </div>
+                            </div>
+
+                            {/* image 2 */}
+                            <div className="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">
+                                    <img
+                                        src={image2}
+
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    >
+
+                                    </img>
+                                </div>
+                            </div>
+
+                            {/* image 3 */}
+                            <div className="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">
+                                    <img
+                                        src={image3}
+
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    >
+
+                                    </img>
+                                </div>
+                            </div>
+
+                            {/* Duplicate videos for seamless looping */}
+                            {/* image 4 */}
+                            <div className="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">
+                                    <img
+                                        src={image4}
+
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    >
+
+                                    </img>
+                                </div>
+                            </div>
+
+                            {/* image 5 */}
+                            <div className="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">
+                                    <img
+                                        src={image5}
+
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    >
+
+                                    </img>
+                                </div>
+                            </div>
+
+                            {/* image 6 */}
+                            <div className="flex-shrink-0 w-full md:w-1/3 px-4">
+                                <div className="relative pb-[75%] bg-black rounded-lg overflow-hidden">
+                                    <img
+                                        src={image6}
+
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    >
+
+                                    </img>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -180,8 +301,9 @@ const Home = () => {
                         transition={{ delay: 0.3 }}
                     >
                         <Link
+                            onClick={scrollToTop}
                             to="/menu"
-                            className="inline-flex items-center px-6 py-3 border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                            className="inline-flex items-center px-6 py-3 border  hover:bg-[#8b9e7e] hover:text-white transition-colors"
                         >
                             View Full Menu
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -210,8 +332,9 @@ const Home = () => {
                                 Every bean and brew is carefully selected to highlight its unique character.
                             </p>
                             <Link
+                                onClick={scrollToTop}
                                 to="/about"
-                                className="inline-block px-6 py-3 border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-white transition-colors"
+                                className="inline-block px-6 py-3 border border-[#2a2a2a] hover:bg-[#8b9e7e] hover:text-white transition-colors"
                             >
                                 Learn More
                             </Link>
@@ -236,7 +359,7 @@ const Home = () => {
                 </div>
             </section>
 
-            
+
         </div>
     );
 };
