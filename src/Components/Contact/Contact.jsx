@@ -237,19 +237,18 @@ const Contact = () => {
             {/* Map Section */}
             <section className="pb-28">
                 <motion.div
-                    className="container mx-auto px-6"
+                    className="container mx-auto px-6 justify-center hover:scale-105 transition-transform duration-300"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="rounded-2xl overflow-hidden shadow-xl h-96 bg-gray-100 relative">
-                        {/* Replace with your actual map component */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <img src={'https://i.postimg.cc/RFcjdqbW/image.png'} alt="" />
-                        </div>
-                    </div>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18677.49496335444!2d-16.92010751796565!3d32.64722386033957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc605f93e77a27e1%3A0xc7de2854aa5a0d01!2sArbor%20Food%20%26%20Coffee!5e0!3m2!1sen!2spt!4v1750013704918!5m2!1sen!2spt" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className=' w-full h-96 shadow-2xl shadow-gray-400 border-b-8 border-[#8b9e7e] rounded-2xl'></iframe>
+
                 </motion.div>
             </section>
+
+
         </div>
     );
 };

@@ -56,8 +56,9 @@ const Home = () => {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
                         y,
-                        // backgroundImage: `url(${'https://i.postimg.cc/yxmK7bLx/IMG-8039.avif'})`
-                        backgroundImage: `url(${'https://i.postimg.cc/htvM97VP/IMG-8042.avif'})`
+                        // backgroundImage: `url(${'https://i.postimg.cc/pLDvVxfd/temp-Imagepa-ZKDo.avif'})`
+                        backgroundImage: `url(${'https://i.postimg.cc/0Ns87rkm/temp-Image-I9-XZue.avif'})`
+                        // backgroundImage: `url(${'https://i.postimg.cc/J0pN3FHX/temp-Image8p-C0nq.avif'})`
                     }}
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -90,11 +91,12 @@ const Home = () => {
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.5 }}
+                        className=' opacity-30'
                     >
                         <Link
                             onClick={scrollToTop}
-                            to="/menu"
-                            className="inline-block px-8 py-3 bg-white  hover:bg-[#8b9e7e] hover:text-white border border-white transition-all duration-500 text-lg"
+                            to={"/menu"}
+                            className="inline-block px-8 py-3 bg-transparent text-white shadow-4xl hover:bg-[#8b9e7e] hover:text-white border border-white transition-all duration-500 text-lg font-bold rounded-bl-2xl rounded-tr-2xl hover:rounded-bl-none hover:rounded-tr-none hover:rounded-br-2xl hover:rounded-tl-2xl"
                         >
                             Explore Menu
                         </Link>
@@ -103,7 +105,7 @@ const Home = () => {
             </section>
 
 
-            {/* Video Showcase Section */}
+            {/* Image Showcase Section */}
             <section className="py-24 bg-[#f1eeea]">
                 <div className="container mx-auto px-6">
                     <motion.div
@@ -120,18 +122,20 @@ const Home = () => {
                         </p>
                     </motion.div>
 
-                    <div className="relative w-full overflow-hidden">
-                        {/* Video Carousel */}
+
+
+                    <div className="relative w-full overflow-hidden ">
+                        {/* Image Carousel */}
                         <motion.div
                             className="flex"
                             animate={{
-                                x: ['0%', '-100%'],
+                                x: ['50%', '-100%'],
 
                             }}
                             transition={{
-                                duration: 10,
+                                duration: 40,
+
                                 ease: "linear",
-                                repeatType: "loop",
                                 repeat: Infinity,
                             }}
 

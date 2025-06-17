@@ -1,12 +1,29 @@
 // src/pages/Menu.jsx
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import menuData from '../../assets/data/menu.json';
+import { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Menu = () => {
-    const [activeTab, setActiveTab] = useState('coffee');
+    const [activeTab, setActiveTab] = useState('juices');
     const [selectedItem, setSelectedItem] = useState(null);
+    const [menu, setMenu] = useState([]);
+
+
+    //https://car-doctor-server-rosy-five.vercel.app
+
+    useEffect(() => {
+        fetch('http://localhost:5002/menu')
+            .then(res => res.json())
+            .then(data => {
+                console.log('Fetched data:', data);
+                setMenu(data); // <- this must run!
+            })
+            .catch(err => console.error('Fetch error:', err));
+
+    }, [])
+
+    console.log('Menu state:', menu['food']);
 
     // Only UI animations - no data changes
     const itemVariants = {
@@ -35,16 +52,13 @@ const Menu = () => {
             {/* Tabs - Only UI */}
             <div className="sticky top-0 z-10 bg-white shadow-sm">
                 <div className="flex overflow-x-auto px-6">
-                    {Object.keys({ ...menuData.drinks, ...menuData.food }).map((tab) => (
+                    {Object.keys({ ...menu.drinks, ...menu.food }).map((tab) => (
                         <motion.button
 
                             whileTap={{ scale: 0.80 }}
                             key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`px-6 py-4 font-medium text-xl whitespace-nowrap   ${activeTab === tab
-                                ? 'text-[#2a2a2a] border-b-2 border-[#8b9e7e]'
-                                : 'text-gray-500'
-                                }`}
+
+                            className={'px-6 py-4 font-medium text-xl whitespace-nowrap'}
                         >
                             {tab.charAt(0).toUpperCase() + tab.slice(1)}
                         </motion.button>
@@ -54,7 +68,7 @@ const Menu = () => {
 
             {/* Menu Items - Direct JSON Usage */}
             <div className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[...(menuData.drinks[activeTab] || []), ...(menuData.food[activeTab] || [])].map((item) => (
+                {[...(menu.drinks || []), ...(menu.food || [])].map((item) => (
                     <motion.div
                         key={item.id}
                         variants={itemVariants}
