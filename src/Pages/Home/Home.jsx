@@ -243,9 +243,9 @@ const Home = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                                className="bg-white p-0 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                                className="bg-white p-0 rounded-lg shadow-sm hover:shadow-md overflow-hidden hover:scale-105 transition-transform"
                             >
-                                <div className=" h-80 overflow-hidden">
+                                <div className=" h-80 overflow-hidden ">
                                     <img
                                         src={item.image}
                                         alt={item.title}
@@ -310,7 +310,7 @@ const Home = () => {
                         <Link
                             onClick={scrollToTop}
                             to="/menu"
-                            className="inline-flex items-center px-6 py-3 border  hover:bg-[#8b9e7e] hover:text-white transition-colors"
+                            className="inline-flex items-center px-6 py-3 border hover:bg-[#8b9e7e] hover:text-white rounded-bl-2xl rounded-tr-2xl hover:rounded-bl-none hover:rounded-tr-none hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-500"
                         >
                             View Full Menu
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

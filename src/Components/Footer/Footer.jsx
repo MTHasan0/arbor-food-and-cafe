@@ -1,3 +1,4 @@
+import { link } from 'framer-motion/client';
 import React from 'react';
 
 const Footer = () => {
@@ -25,11 +26,13 @@ const Footer = () => {
                         <div>
                             <h4 className="text-lg font-medium mb-6">Follow Us</h4>
                             <div className="flex space-x-4">
-                                {['Instagram', 'Facebook', 'Twitter'].map((social, i) => (
-                                    <a key={i} href="#" className="hover:text-[#8b9e7e] transition-colors">
-                                        {social}
-                                    </a>
-                                ))}
+                                {[
+                                    { name: 'Instagram', link: 'https://www.instagram.com/arbor_food_coffee/' },
+                                    { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=61551873605834' }].map((social, i) => (
+                                        <a key={i} href={social.link} className="hover:text-[#8b9e7e] transition-colors">
+                                            {social.name}
+                                        </a>
+                                    ))}
                             </div>
                         </div>
                     </div>

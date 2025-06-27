@@ -1,16 +1,41 @@
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const message = form.message.value;
+
+        const newMessage = { name, email, message };
+        console.log('Submitting:', newMessage);
+
+        try {
+            const response = await axios.post('https://arbor-food-and-cafe-server.vercel.app/message', newMessage);
+            console.log('Response:', response);
+            if (response.status === 201) {
+                Swal.fire({
+                    title: "Message Sent",
+                    icon: "success",
+                    draggable: true
+                });
+                form.reset();
+            } else {
+                alert('Failed to send message. Server returned unexpected status.');
+            }
+        } catch (error) {
+            console.error('Error details:', {
+                message: error.message,
+                response: error.response
+            });
+            alert(`Failed to send message. Error: ${error.message}`);
+        }
     };
 
     return (
@@ -69,8 +94,7 @@ const Contact = () => {
                                             type="text"
                                             id="name"
                                             className="w-full px-4 py-3 border border-[#8b9e7e]/30 rounded-lg focus:ring-2 focus:ring-[#8b9e7e] focus:border-transparent"
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            name='name'
                                         />
                                     </motion.div>
 
@@ -84,8 +108,7 @@ const Contact = () => {
                                             type="email"
                                             id="email"
                                             className="w-full px-4 py-3 border border-[#8b9e7e]/30 rounded-lg focus:ring-2 focus:ring-[#8b9e7e] focus:border-transparent"
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            name='email'
                                         />
                                     </motion.div>
 
@@ -99,8 +122,7 @@ const Contact = () => {
                                             id="message"
                                             rows="5"
                                             className="w-full px-4 py-3 border border-[#8b9e7e]/30 rounded-lg focus:ring-2 focus:ring-[#8b9e7e] focus:border-transparent"
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                            name='message'
                                         ></textarea>
                                     </motion.div>
 
@@ -215,18 +237,10 @@ const Contact = () => {
                                     whileInView={{ opacity: 1 }}
                                     transition={{ delay: 0.6 }}
                                 >
-                                    {[
-                                        { name: 'Instagram', social: 'https://www.instagram.com/arbor_food_coffee/' },
-                                        { name: 'Facebook', social: 'https://www.facebook.com/profile.php?id=61551873605834' }].map((social, i) => (
-                                            <motion.a
-                                                key={i}
-                                                href={social.social}
-                                                className="text-[#8b9e7e] hover:text-[#2a2a2a] transition-colors text-2xl font-bold"
-                                                whileHover={{ y: -3 }}
-                                            >
-                                                {social.name}
-                                            </motion.a>
-                                        ))}
+                                    <div className=' text-4xl flex space-x-5 '>
+                                        <a href="https://www.facebook.com/profile.php?id=61551873605834"><FaFacebook className=' text-blue-600 hover:scale-125 transition-transform'></FaFacebook></a>
+                                        <a href="https://www.instagram.com/arbor_food_coffee/"><FaInstagram className=' text-pink-600 hover:scale-125 transition-transform'></FaInstagram></a>
+                                    </div>
                                 </motion.div>
                             </div>
                         </motion.div>
