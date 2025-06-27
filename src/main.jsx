@@ -12,6 +12,7 @@ import App from './App.jsx';
 import Menu from './Pages/Menu/Menu.jsx';
 import About from './Pages/About/About.jsx';
 import Contact from './Components/Contact/Contact.jsx';
+import AdminPage from './Admin/AdminPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>
+      },
+      {
+        path: "admin-page",
+        element: <AdminPage></AdminPage>
       }
     ]
   },
