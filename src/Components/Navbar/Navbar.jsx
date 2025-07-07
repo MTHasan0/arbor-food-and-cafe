@@ -12,7 +12,8 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Menu', path: '/menu' },
         { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' }
+        { name: 'Contact', path: '/contact' },
+        { name: 'Book a Table', path: '/booking-table' }
     ];
 
     const toggleMenu = () => {

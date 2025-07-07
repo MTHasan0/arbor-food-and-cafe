@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react';
 
 
 const Menu = () => {
-    const [activeTab, setActiveTab] = useState('juices');
+    const [activeTab, setActiveTab] = useState('coffee');
     const [selectedItem, setSelectedItem] = useState(null);
     const [menu, setMenu] = useState({});
 
 
-    //https://car-doctor-server-rosy-five.vercel.app
+
 
     useEffect(() => {
-        fetch('https://arbor-food-and-cafe-server.vercel.app/menu')
+        fetch('https://arbor-food-and-coffee-server.onrender.com/menu')
             .then(res => res.json())
             .then(data => {
                 console.log('Menu data:', data);

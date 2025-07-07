@@ -13,6 +13,7 @@ import Menu from './Pages/Menu/Menu.jsx';
 import About from './Pages/About/About.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import AdminPage from './Admin/AdminPage.jsx';
+import TableBooking from './Pages/TableBooking/TableBooking.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,8 +37,12 @@ const router = createBrowserRouter([
         element: <Contact></Contact>
       },
       {
-        path: "admin-page",
+        path: "/admin-page",
         element: <AdminPage></AdminPage>
+      },
+      {
+        path: "/booking-table",
+        element: <TableBooking></TableBooking>
       }
     ]
   },

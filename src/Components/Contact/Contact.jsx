@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaUser } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const Contact = () => {
@@ -17,8 +17,8 @@ const Contact = () => {
         console.log('Submitting:', newMessage);
 
         try {
-            const response = await axios.post('https://arbor-food-and-cafe-server.vercel.app/message', newMessage);
-            console.log('Response:', response);
+            const response = await axios.post('https://arbor-food-and-coffee-server.onrender.com/message', newMessage);
+            // console.log('Response:', response);
             if (response.status === 201) {
                 Swal.fire({
                     title: "Message Sent",
@@ -39,6 +39,7 @@ const Contact = () => {
     };
 
     return (
+        
         <div className="bg-[#f8f5f0] min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -90,12 +91,13 @@ const Contact = () => {
                                         transition={{ delay: 0.2 }}
                                     >
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                        
                                         <input
                                             type="text"
                                             id="name"
                                             className="w-full px-4 py-3 border border-[#8b9e7e]/30 rounded-lg focus:ring-2 focus:ring-[#8b9e7e] focus:border-transparent"
                                             name='name'
-                                        />
+                                        ></input>
                                     </motion.div>
 
                                     <motion.div
@@ -257,7 +259,7 @@ const Contact = () => {
                     transition={{ duration: 0.8 }}
                 >
 
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18677.49496335444!2d-16.92010751796565!3d32.64722386033957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc605f93e77a27e1%3A0xc7de2854aa5a0d01!2sArbor%20Food%20%26%20Coffee!5e0!3m2!1sen!2spt!4v1750013704918!5m2!1sen!2spt" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className=' w-full h-96 shadow-2xl shadow-gray-400 border-b-8 border-[#8b9e7e] rounded-2xl'></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18677.49496335444!2d-16.92010751796565!3d32.64722386033957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc605f93e77a27e1%3A0xc7de2854aa5a0d01!2sArbor%20Food%20%26%20Coffee!5e0!3m2!1sen!2spt!4v1750013704918!5m2!1sen!2spt" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className=' w-full h-96 shadow-2xl rounded-2xl'></iframe>
 
                 </motion.div>
             </section>
